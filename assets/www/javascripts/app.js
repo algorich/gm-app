@@ -1,4 +1,3 @@
-var DB = Lawnchair({name:'goodbyemoney'}, function(){}),
+var DB = Lawnchair({name:'goodbyemoney'}, function(){});
 
-function onDeviceReady() {
-};
+function onDeviceReady() {};
