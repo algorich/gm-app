@@ -9,7 +9,6 @@ h1 {
 }
 
 #display {
-  margin: auto;
   font-size: 200%;
   text-align: center;
   color: #EBEBEB;
@@ -17,18 +16,8 @@ h1 {
 }
 
 #keyboard {
-  margin: auto;
   border-spacing: 10px;
   text-align: center;
-}
-
-#keyboard td {
-  width: 1%;
-  padding: 1%;
-  font-size: 200%;
-  border: 1px solid;
-  border-radius: 5px;
-  cursor: pointer;
 }
 
 .button {
@@ -36,7 +25,10 @@ h1 {
 }
 
 button {
-  width: 95%;
+  width: 30%;
   padding: 1%;
   font-size: 200%;
+  border: 1px solid;
+  border-radius: 5px;
+  cursor: pointer;
 }

@@ -7,15 +7,18 @@ function onDeviceReady() {
 };
 
 /* Handle events. */
+/* TODO: refactoring based on:
+    http://floatlearning.com/2011/03/developing-better-phonegap-apps/
+    http://developers.google.com/mobile/articles/fast_buttons */
 $(function(){
-  $('#keyboard').on('click', '.digit', function(){
+  $('#keyboard').on('touchend', '.digit', function(){
       digit = $(this).text();
       $('#value').text(function(index, text){
         return text + digit;
       });
   });
 
-  $('#keyboard .del').click(function(){
+  $('#keyboard').on('touchend', '.del', function(){
       $('#value').text(function(index, text){
         return text.slice(0, -1);
       });
