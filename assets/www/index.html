@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="stylesheets/app.css" />
+    <link rel="stylesheet" href="stylesheets/jquery.mobile-1.1.1.min.css" />
 
-    <script type="text/javascript" charset="utf-8" src="javascripts/cordova-1.8.0.js"></script>
+    <script type="text/javascript" charset="utf-8" src="javascripts/cordova-2.0.0.js"></script>
     <script type="text/javascript" charset="utf-8" src="javascripts/lawnchair.js"></script>
     <script type="text/javascript" charset="utf-8" src="javascripts/lawnchair-adapter-dom.js"></script>
     <script type="text/javascript" charset="utf-8" src="javascripts/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="javascripts/jquery.mobile-1.1.1.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="javascripts/app.js"></script>
 
     <!-- This is a script for phonegap debug. DO NOT USE IN PRODUCTION. -->
@@ -18,34 +20,32 @@
   </head>
 
   <body>
-    <h1>Goodbye Money o/</h1>
-    <div class="content">
-      <div id="display">$ <span id="value"></span></div>
-      <div id="keyboard">
-        <div class="line">
-          <button class="digit">1</button>
-          <button class="digit">2</button>
-          <button class="digit">3</button>
-        </div>
-        <div class="line">
-          <button class="digit">4</button>
-          <button class="digit">5</button>
-          <button class="digit">6</button>
-        </div>
-        <div class="line">
-          <button class="digit">7</button>
-          <button class="digit">8</button>
-          <button class="digit">9</button>
-        </div>
-        <div class="line">
-          <button class="del">del</button>
-          <button class="digit">0</button>
-          <button class="digit">.</button>
-        </div>
+    <div data-role="page" id="page-home">
+      <div data-role="header">
+        <h1>Goodbye Money o/</h1>
       </div>
-      <div class="button">
-        <button>Say goobye</button>
+      <div data-role="content">
+        <label>Amount: </label>
+        <input type="number" name="amount" />
+        <label>Description: </label>
+        <input type="text" name="description" />
+        <a href="#" data-role="button" data-inline="true" data-theme="b" id="say-goodbye">Say goodbye!</a>
       </div>
-    </div>
+      <div data-role="footer" data-position="fixed" data-id="footer-nav">
+        <h2>Algorich</h2>
+      </div>
+    </div><!-- /home-->
+
+    <div data-role="page" id="page-list">
+      <div data-role="header">
+        <h1>Goodbye Money o/</h1>
+      </div>
+      <div data-role="content">
+        <ul data-role="listview" data-inset="true" data-filter="true" id="spending-list"></ul>
+      </div>
+      <div data-role="footer" data-position="fixed" data-id="footer-nav">
+        <h2>Algorich</h2>
+      </div>
+    </div><!-- /home-->
   </body>
 </html>
