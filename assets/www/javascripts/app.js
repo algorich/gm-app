@@ -17,6 +17,12 @@ function onMenuButtonDown(){
     $.mobile.changePage("#page-list");
 };
 
+/* trick to auto-focus the first form element. see: http://migre.me/a7jgS */
+$(document).bind('pageshow', function() {
+    $($('.ui-page-active form :input:visible')[0]).focus();
+    window.plugins.SoftKeyBoard.show();
+});
+
 /* Handle events. */
 $(function(){
     $('#say-goodbye').on('tap', function(){
