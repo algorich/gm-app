@@ -25,11 +25,13 @@
         <h1>Goodbye Money o/</h1>
       </div>
       <div data-role="content">
-        <label>Amount: </label>
-        <input type="number" name="amount" />
-        <label>Description: </label>
-        <input type="text" name="description" />
-        <a href="#" data-role="button" data-inline="true" data-theme="b" id="say-goodbye">Say goodbye!</a>
+        <form>
+          <label>Amount: </label>
+          <input type="number" name="amount" />
+          <label>Description: </label>
+          <input type="text" name="description" />
+          <a href="#" data-role="button" data-inline="true" data-theme="b" id="say-goodbye">Say goodbye!</a>
+        </form>
       </div>
       <div data-role="footer" data-position="fixed" data-id="footer-nav">
         <h2>Algorich</h2>
@@ -46,6 +48,18 @@
       <div data-role="footer" data-position="fixed" data-id="footer-nav">
         <h2>Algorich</h2>
       </div>
-    </div><!-- /home-->
+    </div><!-- /list-->
+
+    <div data-role="page" id="spent-menu">
+      <div data-role="header">
+        <h1>What you want to do?</h1>
+      </div>
+      <div data-role="content">
+        <h2>What you want to do?</h2>
+        <a href="#" data-role="button" data-theme="b" id="edit-spent">Edit</a>
+        <a href="#" data-role="button" data-theme="a" id="delete-spent" data-rel="back">Delete</a>
+        <a href="#" data-role="button" data-theme="c" data-rel="back">Cancel</a>
+      </div>
+    </div><!-- /list-->
   </body>
 </html>
