@@ -52,7 +52,7 @@ function updateList() {
         ul.html('');
         list.forEach(function(spent) {
             ul.append('<li spent-id="'+spent.key+'"><a href="#spent-menu" data-rel="dialog">' +
-                        '<h3>R$ ' + spent.value.amount + '</h3>' +
+                        '<h3>$ ' + spent.value.amount + '</h3>' +
                         '<p><strong>' + spent.value.description + '</strong></p>' +
                         '<p>' + spent.value.date + '</p>' +
                       '</li>');
@@ -73,6 +73,10 @@ date:           Date object
 function saveSpent (amount, description, date) {
     DB.save({
         key: date.getTime(),
-        value: { amount: amount, description: description, date: date.toString() }
+        value: {
+            amount: parseFloat(amount).toFixed(2),
+            description: description,
+            date: date.toString()
+        }
     });
 }
