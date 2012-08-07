@@ -1,6 +1,9 @@
 phonegap/local.properties
 phonegap/bin
 phonegap/gen
+local.properties
+bin
+gen
 sencha/sdk
 sencha/.rvmrc
 sencha/algorich-release-key.keystore
