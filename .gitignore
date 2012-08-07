@@ -1,3 +1,11 @@
-local.properties
-bin
-gen
+phonegap/local.properties
+phonegap/bin
+phonegap/gen
+sencha/sdk
+sencha/.rvmrc
+sencha/algorich-release-key.keystore
+sencha/sencha-touch-2.0.0-commercial
+sencha/build
+sencha/all-classes.js
+sencha/app-all.js
+sencha/app.jsb3
