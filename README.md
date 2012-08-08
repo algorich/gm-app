@@ -2,11 +2,16 @@
 
 Mobile app for track the spent money. Yes, JUST the SPENT money, damn it!
 
-## Install
-
-    gem install thin
-
 ## Development
+
+Install [guard](https://github.com/guard/guard/) to watch the changed files on
+sencha/app dir and run `make local`:
+
+    gem install guard guard-shell --no-rdoc --no-ri
+
+Run the guard:
+
+    guard
 
 Remember to create the file `phonegap/local.properties`. This file should set
 the SDK dir, like this:
@@ -17,6 +22,10 @@ the SDK dir, like this:
 The sdk folder are not versioned. So, you have to generate it and copy to sencha
 folder.
 
-### Start web server
+### Local deploy
 
-    thin start
+    make local
+
+### Deploy to device
+
+    make device
