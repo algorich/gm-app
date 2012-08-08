@@ -7,11 +7,8 @@ Ext.Loader.setPath({
 Ext.application({
     name: 'GoodbyeMoney',
 
-    requires: [
-        'Ext.MessageBox'
-    ],
-
-    views: ['Main'],
+    views: ['SpentForm'],
+    controllers: ['Spents'],
 
     icon: {
         57: 'resources/icons/Icon.png',
@@ -19,16 +16,12 @@ Ext.application({
         114: 'resources/icons/Icon@2x.png',
         144: 'resources/icons/Icon~ipad@2x.png'
     },
-    
+
     phoneStartupScreen: 'resources/loading/Homescreen.jpg',
     tabletStartupScreen: 'resources/loading/Homescreen~ipad.jpg',
 
     launch: function() {
-        // Destroy the #appLoadingIndicator element
-        Ext.fly('appLoadingIndicator').destroy();
-
-        // Initialize the main view
-        Ext.Viewport.add(Ext.create('GoodbyeMoney.view.Main'));
+        Ext.Viewport.add(Ext.create('GoodbyeMoney.view.SpentForm'));
     },
 
     onUpdated: function() {
