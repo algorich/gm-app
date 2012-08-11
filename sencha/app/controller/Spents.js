@@ -3,16 +3,33 @@ Ext.define('GoodbyeMoney.controller.Spents', {
 
     config: {
         routes: {
-            'spents': 'productsIndex',
-            'products/:id/edit': 'editProduct'
+            'spents': 'index',
+            'spents/:id/edit': 'edit'
+        },
+
+        refs: {
+            sayGoodbyeButton: {
+                xtype: 'formpanel',
+                selector: 'button'
+            }
+        },
+
+        control: {
+            sayGoodbyeButton: {
+                tap: 'sayGoodbye'
+            }
         }
     },
 
-    productsIndex: function() {
+    sayGoodbye: function() {
+        console.log('TODO: save the spent');
+    },
+
+    index: function() {
         console.log('products index =)');
     },
 
-    editProduct: function(id) {
+    edit: function(id) {
         console.log('edit spent ' + id);
     }
 });

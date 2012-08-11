@@ -7,13 +7,17 @@ Ext.define('GoodbyeMoney.view.SpentForm', {
         fullscreen: true,
         scrollable: false,
 
+        layout: {
+            type: 'vbox',
+            align: 'center'
+        },
+
         items: [
             {
                 xtype: 'titlebar',
                 docked: 'top',
                 title: 'Goodbye Money'
             },
-
             {
                 xtype: 'fieldset',
                 title: 'Set spent',
@@ -29,6 +33,11 @@ Ext.define('GoodbyeMoney.view.SpentForm', {
                         name: 'description'
                     }
                 ]
+            },
+            {
+                xtype: 'button',
+                text: 'Say Goodbye!',
+                ui: 'confirm'
             }
         ]
     }
