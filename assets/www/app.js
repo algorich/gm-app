@@ -9,6 +9,8 @@ Ext.application({
 
     views: ['SpentForm'],
     controllers: ['Spents'],
+    models: ['Spent'],
+    stores: ['Spents'],
 
     icon: {
         57: 'resources/icons/Icon.png',
@@ -21,6 +23,8 @@ Ext.application({
     tabletStartupScreen: 'resources/loading/Homescreen~ipad.jpg',
 
     launch: function() {
+        /* set the default date format */
+        Ext.util.Format.defaultDateFormat = 'd/m/Y';
         Ext.Viewport.add(Ext.create('GoodbyeMoney.view.SpentForm'));
     },
 

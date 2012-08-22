@@ -1,8 +1,14 @@
-device: sencha
-	cd phonegap; ant debug install
+device:
+	# the correct way to do this is using `sencha app build production` but its
+	# not working. try this again when sencha-sdk-tools jump the 2.0.0.beta3 version
+	cd assets/www; mv index.html index-dev.html; mv index-production.html index.html
+	cd assets/www; cp sdk/sencha-touch-all.js .
+	cd assets/www; /opt/sencha-sdk-tools/sencha create jsb -a index.html -p app.jsb3
+	cd assets/www; /opt/sencha-sdk-tools/sencha build -p app.jsb3 -d .
+	ant debug install
+	cd assets/www; mv index.html index-production.html; mv index-dev.html index.html
+	rm assets/www/sencha-touch-all.js
 
-local:
-	cd sencha; /opt/sencha-sdk-tools/sencha create jsb -a index.html -p app.jsb3
-	cd sencha; /opt/sencha-sdk-tools/sencha build -p app.jsb3 -d .
-	cp sencha/app-all.js phonegap/assets/www/sencha
-	cp -r sencha/resources phonegap/assets/www/sencha
+undo:
+	cd assets/www; mv index.html index-production.html; mv index-dev.html index.html
+	rm assets/www/sencha-touch-all.js

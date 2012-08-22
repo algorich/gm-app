@@ -1,8 +1,12 @@
-phonegap/local.properties
-phonegap/bin
-phonegap/gen
-sencha/sdk
-sencha/build
-sencha/all-classes.js
-sencha/app-all.js
-sencha/app.jsb3
+# phonegap files
+local.properties
+bin
+gen
+algorich-release-key.keystore
+
+# sencha files
+assets/www/sdk
+assets/www/build
+assets/www/all-classes.js
+assets/www/app-all.js
+assets/www/app.jsb3
