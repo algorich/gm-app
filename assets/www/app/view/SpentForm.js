@@ -7,7 +7,6 @@ Ext.define('GoodbyeMoney.view.SpentForm', {
 
     config: {
         fullscreen: true,
-        scrollable: false,
 
         layout: {
             type: 'vbox',
