@@ -1,8 +1,12 @@
 Ext.define('GoodbyeMoney.model.Category', {
     extend: 'Ext.data.Model',
-    requires: ['Ext.data.proxy.LocalStorage'],
+    requires: ['Ext.data.proxy.LocalStorage', 'Ext.data.identifier.Uuid'],
+
+    requires: ['Ext.MessageBox'],
 
     config: {
+        identifier: 'uuid',
+
         fields: [
             { name: 'id', type: 'int' },
             { name: 'name', type: 'string' }

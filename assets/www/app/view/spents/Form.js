@@ -1,12 +1,12 @@
 Ext.define('GoodbyeMoney.view.spents.Form', {
     extend: 'Ext.form.Panel',
     alias: 'widget.spentsform',
+    xtype: 'spentsform',
     title: 'Spent',
     requires: ['Ext.TitleBar', 'Ext.form.FieldSet', 'Ext.field.Number',
         'Ext.field.DatePicker', 'Ext.field.Select'],
 
     config: {
-        fullscreen: true,
         title: 'spent',
         iconCls: 'organize',
 
@@ -33,7 +33,7 @@ Ext.define('GoodbyeMoney.view.spents.Form', {
                     {
                         xtype: 'selectfield',
                         label: 'Category',
-                        name: 'category',
+                        name: 'category_id',
                         placeHolder: 'select one...',
                         store: 'Categories',
                         valueField: 'id',

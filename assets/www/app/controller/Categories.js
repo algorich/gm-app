@@ -1,6 +1,8 @@
 Ext.define('GoodbyeMoney.controller.Categories', {
     extend: 'Ext.app.Controller',
 
+    requires: ['Ext.MessageBox'],
+
     config: {
         routes: {
           'categories/new': 'new'

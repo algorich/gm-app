@@ -33,6 +33,7 @@ Ext.define('GoodbyeMoney.controller.Spents', {
     },
 
     save: function() {
+        console.log(this.getForm().getValues())
         var spent = Ext.create('GoodbyeMoney.model.Spent', this.getForm().getValues());
             errors = spent.validate();
 

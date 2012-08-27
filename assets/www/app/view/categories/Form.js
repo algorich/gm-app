@@ -1,11 +1,11 @@
 Ext.define('GoodbyeMoney.view.categories.Form', {
     extend: 'Ext.form.Panel',
     alias: 'widget.categoriesform',
+    xtype: 'categoriesform',
     title: 'Category',
     requires: ['Ext.TitleBar', 'Ext.form.FieldSet', 'Ext.field.Text'],
 
     config: {
-        fullscreen: true,
         title: 'category',
         iconCls: 'star',
 
