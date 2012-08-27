@@ -1,14 +1,19 @@
-device:
-	# the correct way to do this is using `sencha app build production` but its
-	# not working. try this again when sencha-sdk-tools jump the 2.0.0.beta3 version
-	cd assets/www; mv index.html index-dev.html; mv index-production.html index.html
-	cd assets/www; cp sdk/sencha-touch-all.js .
-	cd assets/www; /opt/SenchaSDKTools-2.0.0-beta3/sencha create jsb -a index.html -p app.jsb3
-	cd assets/www; /opt/SenchaSDKTools-2.0.0-beta3/sencha build -p app.jsb3 -d .
+testing:
+	rm -rf /tmp/goodbye-money
+	mkdir -p /tmp/goodbye-money
+	cd assets/www; /opt/SenchaSDKTools-2.0.0-beta3/sencha app build testing
+	mv assets/www /tmp/goodbye-money
+	mv /tmp/goodbye-money/www/build/testing assets/www
 	ant debug install
-	cd assets/www; mv index.html index-production.html; mv index-dev.html index.html
-	rm assets/www/sencha-touch-all.js
+	rm -rf assets/www/
+	mv /tmp/goodbye-money/www assets
 
-undo:
-	cd assets/www; mv index.html index-production.html; mv index-dev.html index.html
-	rm assets/www/sencha-touch-all.js
+production:
+	rm -rf /tmp/goodbye-money
+	mkdir -p /tmp/goodbye-money
+	cd assets/www; /opt/SenchaSDKTools-2.0.0-beta3/sencha app build package
+	mv assets/www /tmp/goodbye-money
+	mv /tmp/goodbye-money/www/build/package assets/www
+	ant debug install
+	rm -rf assets/www/
+	mv /tmp/goodbye-money/www assets
