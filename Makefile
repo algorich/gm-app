@@ -3,8 +3,8 @@ device:
 	# not working. try this again when sencha-sdk-tools jump the 2.0.0.beta3 version
 	cd assets/www; mv index.html index-dev.html; mv index-production.html index.html
 	cd assets/www; cp sdk/sencha-touch-all.js .
-	cd assets/www; /opt/sencha-sdk-tools/sencha create jsb -a index.html -p app.jsb3
-	cd assets/www; /opt/sencha-sdk-tools/sencha build -p app.jsb3 -d .
+	cd assets/www; /opt/SenchaSDKTools-2.0.0-beta3/sencha create jsb -a index.html -p app.jsb3
+	cd assets/www; /opt/SenchaSDKTools-2.0.0-beta3/sencha build -p app.jsb3 -d .
 	ant debug install
 	cd assets/www; mv index.html index-production.html; mv index-dev.html index.html
 	rm assets/www/sencha-touch-all.js
