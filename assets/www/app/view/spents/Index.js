@@ -1,4 +1,4 @@
-Ext.define('GoodbyeMoney.view.SpentsList', {
+Ext.define('GoodbyeMoney.view.spents.Index', {
     extend: 'Ext.List',
     fullscreen: true,
 

@@ -1,12 +1,14 @@
-Ext.define('GoodbyeMoney.view.SpentForm', {
+Ext.define('GoodbyeMoney.view.spents.Form', {
     extend: 'Ext.form.Panel',
     alias: 'widget.spentsform',
     title: 'Spent',
-    requires: ['Ext.TitleBar', 'Ext.form.FieldSet', 'Ext.form.Number',
+    requires: ['Ext.TitleBar', 'Ext.form.FieldSet', 'Ext.field.Number',
         'Ext.field.DatePicker', 'Ext.field.Select'],
 
     config: {
         fullscreen: true,
+        title: 'spent',
+        iconCls: 'organize',
 
         layout: {
             type: 'vbox',
@@ -32,10 +34,10 @@ Ext.define('GoodbyeMoney.view.SpentForm', {
                         xtype: 'selectfield',
                         label: 'Category',
                         name: 'category',
-                        options: [
-                            { text: '', value: '' },
-                            { text:  'example', value: '1' }
-                        ]
+                        placeHolder: 'select one...',
+                        store: 'Categories',
+                        valueField: 'id',
+                        displayField: 'name'
                     },
                     {
                         xtype: 'textfield',
@@ -54,7 +56,7 @@ Ext.define('GoodbyeMoney.view.SpentForm', {
                 xtype: 'button',
                 text: 'Say Goodbye!',
                 ui: 'confirm',
-                id: 'say_goodbye_button'
+                action: 'saveSpent'
             }
         ]
     }

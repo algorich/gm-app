@@ -7,10 +7,10 @@ Ext.Loader.setPath({
 Ext.application({
     name: 'GoodbyeMoney',
 
-    views: ['SpentForm'],
-    controllers: ['Spents'],
-    models: ['Spent'],
-    stores: ['Spents'],
+    views: ['Main', 'spents.Form', 'spents.Index', 'categories.Form'],
+    controllers: ['Main', 'Spents', 'Categories'],
+    models: ['Spent', 'Category'],
+    stores: ['Spents', 'Categories'],
 
     icon: {
         57: 'resources/icons/Icon.png',
@@ -25,7 +25,7 @@ Ext.application({
     launch: function() {
         /* set the default date format */
         Ext.util.Format.defaultDateFormat = 'd/m/Y';
-        Ext.Viewport.add(Ext.create('GoodbyeMoney.view.SpentForm'));
+        this.getController('Main').show();
     },
 
     onUpdated: function() {

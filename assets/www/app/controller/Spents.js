@@ -10,7 +10,7 @@ Ext.define('GoodbyeMoney.controller.Spents', {
         refs: {
             saveButton: {
                 xtype: 'formpanel',
-                selector: '#say_goodbye_button'
+                selector: 'button[action="saveSpent"]'
             },
             form: {
                 xtype: 'spentsform',
@@ -26,15 +26,20 @@ Ext.define('GoodbyeMoney.controller.Spents', {
         }
     },
 
+    new: function() {
+        var categories_store = Ext.getStore('Categories');
+        categories_store.load();
+        Ext.Viewport.add(this.getForm());
+    },
+
     save: function() {
         var spent = Ext.create('GoodbyeMoney.model.Spent', this.getForm().getValues());
             errors = spent.validate();
 
         if (errors.isValid()){
-            var store = Ext.getStore('Spents');
             /* should have a non invasive way to do this */
             spent._data.amount = spent._data.amount.toFixed(2);
-            store.add(spent);
+            spent.save();
             navigator.app.exitApp();
         } else {
             Ext.Msg.alert(
