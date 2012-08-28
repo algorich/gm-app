@@ -26,18 +26,17 @@ Ext.define('GoodbyeMoney.controller.Spents', {
         }
     },
 
-    new: function() {
+    newSpent: function () {
         var categories_store = Ext.getStore('Categories');
         categories_store.load();
         Ext.Viewport.add(this.getForm());
     },
 
-    save: function() {
-        console.log(this.getForm().getValues())
-        var spent = Ext.create('GoodbyeMoney.model.Spent', this.getForm().getValues());
+    save: function () {
+        var spent = Ext.create('GoodbyeMoney.model.Spent', this.getForm().getValues()),
             errors = spent.validate();
 
-        if (errors.isValid()){
+        if (errors.isValid()) {
             /* should have a non invasive way to do this */
             spent._data.amount = spent._data.amount.toFixed(2);
             spent.save();
@@ -46,16 +45,15 @@ Ext.define('GoodbyeMoney.controller.Spents', {
             Ext.Msg.alert(
                 'Field with error',
                 'Fix the following errors:'
-            )
-            console.log(errors.items);
+            );
         }
     },
 
-    index: function() {
+    index: function () {
         console.log('products index =)');
     },
 
-    edit: function(id) {
+    edit: function (id) {
         console.log('edit spent ' + id);
     }
 });

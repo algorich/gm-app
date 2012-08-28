@@ -5,7 +5,7 @@ Ext.define('GoodbyeMoney.controller.Categories', {
 
     config: {
         routes: {
-          'categories/new': 'new'
+          'categories/new': 'newCategory'
         },
 
         refs: {
@@ -22,7 +22,7 @@ Ext.define('GoodbyeMoney.controller.Categories', {
 
         control: {
             newCategoryButton: {
-                tap: 'new'
+                tap: 'newCategory'
             },
             saveButton: {
                 tap: 'save'
@@ -30,7 +30,7 @@ Ext.define('GoodbyeMoney.controller.Categories', {
         }
     },
 
-    new: function() {
+    newCategory: function() {
         Ext.Viewport.setActiveItem(this.getForm());
     },
 
