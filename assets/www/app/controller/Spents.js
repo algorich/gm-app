@@ -1,6 +1,8 @@
 Ext.define('GoodbyeMoney.controller.Spents', {
     extend: 'Ext.app.Controller',
 
+    requires: ['Ext.MessageBox'],
+
     config: {
         routes: {
             'spents': 'index',
