@@ -1,19 +1,32 @@
-testing:
-	rm -rf /tmp/goodbye-money
-	mkdir -p /tmp/goodbye-money
-	cd assets/www; /opt/SenchaSDKTools-2.0.0-beta3/sencha app build testing
-	mv assets/www /tmp/goodbye-money
-	mv /tmp/goodbye-money/www/build/testing assets/www
-	ant debug install
-	rm -rf assets/www/
-	mv /tmp/goodbye-money/www assets
+production: prepare-temp production-build mv-build-production install undo-mv-build
 
-production:
-	rm -rf /tmp/goodbye-money
-	mkdir -p /tmp/goodbye-money
+testing: prepare-temp testing-build mv-build-testing install undo-mv-build
+
+local-production: prepare-temp production-build mv-build-production
+
+local-testing: prepare-temp testing-build mv-build-testing
+
+prepare-temp:
+	rm -rf /tmp/impostometro
+	mkdir -p /tmp/impostometro
+
+testing-build:
+	cd assets/www; /opt/SenchaSDKTools-2.0.0-beta3/sencha app build testing
+
+mv-build-testing:
+	mv assets/www /tmp/impostometro
+	mv /tmp/impostometro/www/build/testing assets/www
+
+production-build:
 	cd assets/www; /opt/SenchaSDKTools-2.0.0-beta3/sencha app build package
-	mv assets/www /tmp/goodbye-money
-	mv /tmp/goodbye-money/www/build/package assets/www
+
+mv-build-production:
+	mv assets/www /tmp/impostometro
+	mv /tmp/impostometro/www/build/package assets/www
+
+install:
 	ant debug install
+
+undo-mv-build:
 	rm -rf assets/www/
-	mv /tmp/goodbye-money/www assets
+	mv /tmp/impostometro/www assets
