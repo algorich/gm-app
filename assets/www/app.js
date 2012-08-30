@@ -1,7 +1,8 @@
 Ext.application({
     name: 'GoodbyeMoney',
 
-    views: ['Main', 'spents.Form', 'spents.Index', 'categories.Form'],
+    views: ['Main', 'spents.Form', 'spents.Index', 'categories.Index',
+    'categories.Form', 'categories.List'],
     controllers: ['Main', 'Spents', 'Categories'],
     models: ['Spent', 'Category'],
     stores: ['Spents', 'Categories'],

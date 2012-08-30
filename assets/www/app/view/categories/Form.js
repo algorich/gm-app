@@ -2,27 +2,13 @@ Ext.define('GoodbyeMoney.view.categories.Form', {
     extend: 'Ext.form.Panel',
     alias: 'widget.categoriesform',
     xtype: 'categoriesform',
-    title: 'Category',
-    requires: ['Ext.TitleBar', 'Ext.form.FieldSet', 'Ext.field.Text'],
+    requires: ['Ext.form.FieldSet', 'Ext.field.Text'],
 
     config: {
-        title: 'category',
-        iconCls: 'star',
-
-        layout: {
-            type: 'vbox',
-            align: 'center'
-        },
-
         items: [
             {
-                xtype: 'titlebar',
-                docked: 'top',
-                title: 'Category'
-            },
-            {
                 xtype: 'fieldset',
-                title: 'Category',
+                title: 'New',
                 items: [
                     {
                         xtype: 'textfield',

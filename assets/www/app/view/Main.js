@@ -9,7 +9,7 @@ Ext.define('GoodbyeMoney.view.Main', {
 
         items: [
             { xtype: 'spentsform' },
-            { xtype: 'categoriesform' }
+            { xtype: 'categoriesindex' }
         ]
     }
 });
