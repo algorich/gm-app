@@ -6,7 +6,7 @@ Ext.define('GoodbyeMoney.view.categories.Index', {
 
     config: {
         title: 'categories',
-        iconCls: 'tag',
+        iconCls: 'tags',
         layout: 'vbox', /* ajust the layout to show all items content */
 
         items: [

@@ -1,3 +1,5 @@
+.rvmrc
+
 # phonegap files
 local.properties
 bin
@@ -11,3 +13,4 @@ assets/www/all-classes.js
 assets/www/app-all.js
 assets/www/app.jsb3
 assets/www/archive
+assets/www/resources/sass/.sass-cache/

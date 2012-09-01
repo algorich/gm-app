@@ -30,3 +30,6 @@ install:
 undo-mv-build:
 	rm -rf assets/www/
 	mv /tmp/impostometro/www assets
+
+compile-css:
+	cd assets/www/resources/sass; compass compile app.scss
