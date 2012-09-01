@@ -10,11 +10,6 @@ Ext.define('GoodbyeMoney.view.spents.Form', {
         title: 'spent',
         iconCls: 'compose',
 
-        layout: {
-            type: 'vbox',
-            align: 'center'
-        },
-
         items: [
             {
                 xtype: 'titlebar',
