@@ -10,7 +10,7 @@ Ext.define('GoodbyeMoney.model.Spent', {
             { name: 'id', type: 'int' },
             { name: 'amount', type: 'float' },
             { name: 'description', type: 'string' },
-            { name: 'date', type: 'datetime' },
+            { name: 'date', type: 'date' },
             { name: 'category_id', type: 'string' },
         ],
 
