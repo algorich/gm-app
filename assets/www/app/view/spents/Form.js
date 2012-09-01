@@ -30,6 +30,7 @@ Ext.define('GoodbyeMoney.view.spents.Form', {
                         label: 'Category',
                         name: 'category_id',
                         placeHolder: 'select one...',
+                        value: '',
                         store: 'Categories',
                         valueField: 'id',
                         displayField: 'name'
