@@ -4,10 +4,6 @@ Ext.define('GoodbyeMoney.controller.Categories', {
     requires: ['Ext.MessageBox'],
 
     config: {
-        routes: {
-          'categories/new': 'newCategory'
-        },
-
         refs: {
             form: {
                 xtype: 'categoriesform',
@@ -21,25 +17,21 @@ Ext.define('GoodbyeMoney.controller.Categories', {
         },
 
         control: {
-            newCategoryButton: {
-                tap: 'newCategory'
-            },
             saveButton: {
                 tap: 'save'
             }
         }
     },
 
-    newCategory: function() {
-        Ext.Viewport.setActiveItem(this.getForm());
-    },
-
     save: function() {
-        var category = Ext.create('GoodbyeMoney.model.Category', this.getForm().getValues());
-            errors = category.validate();
+        var form = this.getForm();
+        var category = Ext.create('GoodbyeMoney.model.Category', form.getValues());
+        var errors = category.validate();
 
         if (errors.isValid()){
             category.save();
+            form.setValues({name: ''})
+            Ext.getStore('Categories').load();
         } else {
             /* TODO: do this better, showing the errors on respective field */
             var errors_string = '';
