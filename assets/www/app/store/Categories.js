@@ -5,6 +5,13 @@ Ext.define('GoodbyeMoney.store.Categories', {
         model: 'GoodbyeMoney.model.Category',
         autoSync: true,
 
-        sorters: ['name']
+        sorters: ['name'],
+
+        listeners: {
+            /* hack to set an empty category on select field */
+            load: function(store) {
+                store.add({name: ''});
+            }
+        }
     }
 });
