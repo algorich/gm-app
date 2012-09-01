@@ -8,7 +8,7 @@ Ext.define('GoodbyeMoney.view.spents.Form', {
 
     config: {
         title: 'spent',
-        iconCls: 'organize',
+        iconCls: 'compose',
 
         layout: {
             type: 'vbox',

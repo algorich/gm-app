@@ -3,7 +3,6 @@ Ext.define('GoodbyeMoney.store.Spents', {
 
     config: {
         model: 'GoodbyeMoney.model.Spent',
-        autoload: true,
         autoSync: true
     }
 });
