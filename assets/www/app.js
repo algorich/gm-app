@@ -30,7 +30,8 @@ Ext.application({
         Ext.fly('appLoadingIndicator').destroy();
 
         /* set the default date format */
-        Ext.util.Format.defaultDateFormat = 'd/m/Y';
+        Ext.util.Format.defaultDateFormat = 'Y-m-d';
+
         this.getController('Main').show();
     },
 
