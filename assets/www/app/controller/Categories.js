@@ -30,7 +30,7 @@ Ext.define('GoodbyeMoney.controller.Categories', {
 
         if (errors.isValid()){
             category.save();
-            form.setValues({name: ''})
+            form.reset()
             Ext.getStore('Categories').load();
         } else {
             /* TODO: do this better, showing the errors on respective field */
