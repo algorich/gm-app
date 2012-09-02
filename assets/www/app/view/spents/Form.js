@@ -29,9 +29,22 @@ Ext.define('GoodbyeMoney.view.spents.Form', {
                         xtype: 'selectfield',
                         label: 'Category',
                         name: 'category_id',
-                        store: 'Categories',
-                        valueField: 'id',
-                        displayField: 'name'
+                        valueField: 'value',
+                        displayField: 'name',
+                        /* store: 'Categories',*/
+                        listeners: {
+                            /* Hack to set an empty category on select field.
+                               Sencha touch should provide a default way to do
+                               this with store option. It should be painted
+                               event to update when a category is added. */
+                            painted: function() {
+                                var opts = [{ name: '', value: undefined }];
+                                Ext.getStore('Categories').each(function(record) {
+                                    opts.push({ name: record.data.name, value: record.data.id });
+                                });
+                                this.setOptions(opts);
+                            }
+                        }
                     },
                     {
                         xtype: 'textfield',

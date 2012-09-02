@@ -39,8 +39,6 @@ Ext.define('GoodbyeMoney.controller.Spents', {
             errors = spent.validate();
 
         if (errors.isValid()) {
-            /* should have a non invasive way to do this */
-            spent._data.amount = spent._data.amount.toFixed(2);
             spent.save();
             navigator.app.exitApp();
         } else {
