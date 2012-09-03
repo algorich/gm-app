@@ -1,7 +1,6 @@
-Ext.define('GoodbyeMoney.view.spents.Form', {
+Ext.define('GoodbyeMoney.view.spents.New', {
     extend: 'Ext.form.Panel',
-    alias: 'widget.spentsform',
-    xtype: 'spentsform',
+    xtype: 'newspent',
     title: 'Spent',
     requires: ['Ext.TitleBar', 'Ext.form.FieldSet', 'Ext.field.Number',
         'Ext.field.DatePicker', 'Ext.field.Select'],
@@ -63,7 +62,7 @@ Ext.define('GoodbyeMoney.view.spents.Form', {
                 xtype: 'button',
                 text: 'Say Goodbye!',
                 ui: 'confirm',
-                action: 'saveSpent'
+                action: 'createSpent'
             }
         ]
     }

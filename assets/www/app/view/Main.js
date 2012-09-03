@@ -8,8 +8,8 @@ Ext.define('GoodbyeMoney.view.Main', {
         tabBarPosition: 'bottom',
 
         items: [
-            { xtype: 'spentsform' },
-            { xtype: 'spentslist' },
+            { xtype: 'newspent' },
+            { xtype: 'spentsmain' },
             { xtype: 'categoriesindex' }
         ]
     }
