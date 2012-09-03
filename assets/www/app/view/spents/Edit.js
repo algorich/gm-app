@@ -3,7 +3,7 @@ Ext.define('GoodbyeMoney.view.spents.Edit', {
     xtype: 'editspent',
     title: 'Spent',
     requires: ['Ext.TitleBar', 'Ext.form.FieldSet', 'Ext.field.Number',
-        'Ext.field.DatePicker', 'Ext.field.Select'],
+        'Ext.field.DatePicker', 'Ext.field.Select', 'Ext.field.Hidden'],
 
     config: {
         items: [
@@ -24,6 +24,10 @@ Ext.define('GoodbyeMoney.view.spents.Edit', {
                 xtype: 'fieldset',
                 title: 'Set spent',
                 items: [
+                    {
+                        xtype: 'hiddenfield',
+                        name: 'id'
+                    },
                     {
                         xtype: 'numberfield',
                         label: 'Amount',
@@ -67,6 +71,13 @@ Ext.define('GoodbyeMoney.view.spents.Edit', {
                 text: 'Update',
                 ui: 'confirm',
                 action: 'updateSpent',
+                margin: '0 0 10 0'
+            },
+            {
+                xtype: 'button',
+                text: 'Delete',
+                ui: 'decline',
+                action: 'deleteSpent',
                 margin: '0 0 10 0'
             },
             {

@@ -34,6 +34,10 @@ Ext.define('GoodbyeMoney.controller.Spents', {
             cancelUpdateSpent: {
                 xtype: 'editspent',
                 selector: 'button[action="cancelUpdateSpent"]'
+            },
+            deleteSpent: {
+                xtype: 'editspent',
+                selector: 'button[action="deleteSpent"]'
             }
         },
 
@@ -46,6 +50,9 @@ Ext.define('GoodbyeMoney.controller.Spents', {
             },
             cancelUpdateSpent: {
                 tap: 'list'
+            },
+            deleteSpent: {
+                tap: 'destroy'
             },
             list: {
                 itemtap: 'edit'
@@ -90,5 +97,23 @@ Ext.define('GoodbyeMoney.controller.Spents', {
         var mainpanel = this.getMainPanel();
         Ext.Viewport.setActiveItem(mainpanel);
         mainpanel.setActiveItem(1);
+    },
+
+    destroy: function() {
+        var that = this;
+        Ext.Msg.confirm(
+            'Delete spent',
+            'Are you sure?',
+            function(buttonId) {
+                if (buttonId === 'yes') {
+                    var form = that.getEditForm();
+                    var store = Ext.getStore('Spents');
+                    var record = store.findRecord('id', form.getRecord().getId());
+                    store.remove(record);
+                    form.reset();
+                    that.list();
+                };
+            }
+        );
     }
 });
