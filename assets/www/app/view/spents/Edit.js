@@ -46,16 +46,22 @@ Ext.define('GoodbyeMoney.view.spents.Edit', {
                                this with store option. It should be on painted
                                event to update when a category is added; and on
                                initialize to set on first form load. */
-                            initialize: function() { this.updateOpts(); },
-                            painted: function() { this.updateOpts(); }
+                            /* TODO: try to remove this duplication */
+                            initialize: function() {
+                                var opts = [{ name: '', value: null }];
+                                Ext.getStore('Categories').each(function(record) {
+                                    opts.push({ name: record.data.name, value: record.data.id });
+                                });
+                                this.setOptions(opts);
+                            },
+                            painted: function() {
+                                var opts = [{ name: '', value: null }];
+                                Ext.getStore('Categories').each(function(record) {
+                                    opts.push({ name: record.data.name, value: record.data.id });
+                                });
+                                this.setOptions(opts);
+                            }
                         },
-                        updateOpts: function() {
-                            var opts = [{ name: '', value: null }];
-                            Ext.getStore('Categories').each(function(record) {
-                                opts.push({ name: record.data.name, value: record.data.id });
-                            });
-                            this.setOptions(opts);
-                        }
                     },
                     {
                         xtype: 'textfield',
