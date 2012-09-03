@@ -62,7 +62,14 @@ Ext.define('GoodbyeMoney.view.spents.New', {
                 xtype: 'button',
                 text: 'Say Goodbye!',
                 ui: 'confirm',
-                action: 'createSpent'
+                action: 'createSpent',
+                margin: '0 0 10 0'
+            },
+            {
+                xtype: 'button',
+                text: 'Say Goodbye! +1',
+                ui: 'action',
+                action: 'createOtherSpent'
             }
         ]
     }

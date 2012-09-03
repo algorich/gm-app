@@ -27,6 +27,10 @@ Ext.define('GoodbyeMoney.controller.Spents', {
                 xtype: 'newspent',
                 selector: 'button[action="createSpent"]'
             },
+            createOtherSpent: {
+                xtype: 'newspent',
+                selector: 'button[action="createOtherSpent"]'
+            },
             updateButton: {
                 xtype: 'editspent',
                 selector: 'button[action="updateSpent"]'
@@ -45,6 +49,9 @@ Ext.define('GoodbyeMoney.controller.Spents', {
             createButton: {
                 tap: 'create'
             },
+            createOtherSpent: {
+                tap: 'create'
+            },
             updateButton: {
                 tap: 'update'
             },
@@ -60,14 +67,17 @@ Ext.define('GoodbyeMoney.controller.Spents', {
         }
     },
 
-    create: function () {
+    create: function (button) {
         var form = this.getNewForm();
         var spent = Ext.create('GoodbyeMoney.model.Spent', form.getValues());
         var errors = spent.validate();
 
         if (errors.isValid()) {
             spent.save();
-            navigator.app.exitApp();
+            if (button.action === 'createSpent')
+                navigator.app.exitApp();
+            else
+                form.reset();
         } else {
             /* TODO: show errors */
             Ext.Msg.alert(
