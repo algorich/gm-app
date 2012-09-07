@@ -53,6 +53,6 @@ On the above examples replace the **<mode>** by the mode that you will use to bu
 
 2. If you want to build and run locally (with ripple), you have to use the `local-<mode>` task. After do the tests, you have to undo this using the `undo-local` task.
 
-3. If you want to run the build just to see if it compile successfuly, you have to use the `<modo>-build` task.
+3. If you want to run the build just to see if it compile successfuly, you have to use the `<mode>-build` task.
 
 **Important**: before every commit, the 3th item should be followed, to see if the changes dont break something on the compilation.
