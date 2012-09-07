@@ -27,6 +27,8 @@ mv-build-production:
 install:
 	ant debug install
 
+undo-local: undo-mv-build
+
 undo-mv-build:
 	rm -rf assets/www/
 	mv /tmp/impostometro/www assets
