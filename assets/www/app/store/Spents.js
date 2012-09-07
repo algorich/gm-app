@@ -5,6 +5,13 @@ Ext.define('GoodbyeMoney.store.Spents', {
         model: 'GoodbyeMoney.model.Spent',
         autoSync: true,
 
+        sorters: [
+            {
+                property : 'date',
+                direction: 'DESC'
+            }
+        ],
+
         grouper: {
             direction: 'DESC',
             groupFn: function(record) {
