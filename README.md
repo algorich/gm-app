@@ -1,4 +1,4 @@
-# goodbye-money
+# GoodbyeMoney
 
 The money that go away is the responsible for let our pockets empty. The amount
 of money that you earn is the same every month, but we spent it in several
@@ -16,7 +16,7 @@ A: No! JUST the SPENT money!
 
 ### Q: GoodbyeMoney is available for Android?
 
-Yes, but no on google play yet. I'm finishing some features and will available
+Yes, but not on google play yet. I'm finishing some features and will available
 there soon.
 
 ### Q: GoodbyeMoney is available for iPhone?
