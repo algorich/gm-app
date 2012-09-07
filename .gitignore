@@ -7,7 +7,6 @@ gen
 algorich-release-key.keystore
 
 # sencha files
-assets/www/sdk
 assets/www/build
 assets/www/all-classes.js
 assets/www/app-all.js
