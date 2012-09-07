@@ -26,13 +26,13 @@ Ext.define('GoodbyeMoney.store.Spents', {
                 var store = record.stores[0];
                 var date = record.get('date');
                 var title = date.getFullYear() + ', ' + mounthNames[date.getMonth()];
-
                 var template = new Ext.Template(
                     '{title} <span class="total-amount">total: $ {total}</span>'
                 );
 
                 store.each(function(item) {
-                    total += item.get('amount');
+                    if (item.get('date').getMonth() === date.getMonth())
+                        total += item.get('amount');
                 });
 
                 return template.apply({title: title, total: total.toFixed(2)});
