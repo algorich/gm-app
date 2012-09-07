@@ -1,4 +1,4 @@
-Ext.define('GoodbyeMoney.controller.Spents', {
+Ext.define('GM.controller.Spents', {
     extend: 'Ext.app.Controller',
 
     requires: ['Ext.MessageBox'],
@@ -69,7 +69,7 @@ Ext.define('GoodbyeMoney.controller.Spents', {
 
     create: function (button) {
         var form = this.getNewForm();
-        var spent = Ext.create('GoodbyeMoney.model.Spent', form.getValues());
+        var spent = Ext.create('GM.model.Spent', form.getValues());
         var errors = spent.validate();
 
         if (errors.isValid()) {

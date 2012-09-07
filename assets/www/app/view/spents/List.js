@@ -1,4 +1,4 @@
-Ext.define('GoodbyeMoney.view.spents.List', {
+Ext.define('GM.view.spents.List', {
     extend: 'Ext.List',
     xtype: 'spentslist',
 

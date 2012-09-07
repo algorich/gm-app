@@ -1,5 +1,5 @@
 Ext.application({
-    name: 'GoodbyeMoney',
+    name: 'GM',
 
     views: ['Main', 'spents.Main', 'spents.New', 'spents.Edit', 'spents.List',
     'categories.Index', 'categories.Form', 'categories.List'],

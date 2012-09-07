@@ -1,8 +1,8 @@
-Ext.define('GoodbyeMoney.store.Spents', {
+Ext.define('GM.store.Spents', {
     extend: 'Ext.data.Store',
 
     config: {
-        model: 'GoodbyeMoney.model.Spent',
+        model: 'GM.model.Spent',
         autoSync: true,
 
         sorters: [

@@ -1,4 +1,4 @@
-Ext.define('GoodbyeMoney.controller.Categories', {
+Ext.define('GM.controller.Categories', {
     extend: 'Ext.app.Controller',
 
     requires: ['Ext.MessageBox'],
@@ -25,7 +25,7 @@ Ext.define('GoodbyeMoney.controller.Categories', {
 
     save: function() {
         var form = this.getForm();
-        var category = Ext.create('GoodbyeMoney.model.Category', form.getValues());
+        var category = Ext.create('GM.model.Category', form.getValues());
         var errors = category.validate();
 
         if (errors.isValid()){

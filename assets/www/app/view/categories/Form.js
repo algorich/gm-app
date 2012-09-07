@@ -1,4 +1,4 @@
-Ext.define('GoodbyeMoney.view.categories.Form', {
+Ext.define('GM.view.categories.Form', {
     extend: 'Ext.form.Panel',
     alias: 'widget.categoriesform',
     xtype: 'categoriesform',

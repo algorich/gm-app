@@ -1,4 +1,4 @@
-Ext.define('GoodbyeMoney.view.categories.Index', {
+Ext.define('GM.view.categories.Index', {
     extend: 'Ext.Container',
     xtype: 'categoriesindex',
 

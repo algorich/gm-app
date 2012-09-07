@@ -1,4 +1,4 @@
-Ext.define('GoodbyeMoney.view.Main', {
+Ext.define('GM.view.Main', {
     extend: 'Ext.tab.Panel',
     xtype: 'mainpanel',
     title: 'Goodbye Money',

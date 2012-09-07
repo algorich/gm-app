@@ -1,4 +1,4 @@
-Ext.define('GoodbyeMoney.view.spents.Edit', {
+Ext.define('GM.view.spents.Edit', {
     extend: 'Ext.form.Panel',
     xtype: 'editspent',
     title: 'Spent',

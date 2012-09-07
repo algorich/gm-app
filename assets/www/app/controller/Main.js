@@ -1,4 +1,4 @@
-Ext.define('GoodbyeMoney.controller.Main', {
+Ext.define('GM.controller.Main', {
     extend: 'Ext.app.Controller',
 
     config: {

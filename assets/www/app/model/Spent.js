@@ -1,7 +1,7 @@
-Ext.define('GoodbyeMoney.model.Spent', {
+Ext.define('GM.model.Spent', {
     extend: 'Ext.data.Model',
     requires: ['Ext.data.proxy.LocalStorage', 'Ext.data.identifier.Uuid',
-        'GoodbyeMoney.model.Category' ],
+        'GM.model.Category' ],
 
     config: {
         identifier: 'uuid',
@@ -14,7 +14,7 @@ Ext.define('GoodbyeMoney.model.Spent', {
             { name: 'category_id', type: 'string' },
         ],
 
-        belongsTo: { model: 'GoodbyeMoney.model.Category', name: 'category' },
+        belongsTo: { model: 'GM.model.Category', name: 'category' },
 
         validations: [
             { type: 'presence', field: 'amount' },

@@ -1,4 +1,4 @@
-Ext.define('GoodbyeMoney.model.Category', {
+Ext.define('GM.model.Category', {
     extend: 'Ext.data.Model',
     requires: ['Ext.data.proxy.LocalStorage', 'Ext.data.identifier.Uuid'],
 
@@ -12,7 +12,7 @@ Ext.define('GoodbyeMoney.model.Category', {
             { name: 'name', type: 'string' }
         ],
 
-        hasMany: { model: 'GoodbyeMoney.model.Spent', name: 'spents' },
+        hasMany: { model: 'GM.model.Spent', name: 'spents' },
 
         validations: [
             { type: 'presence', field: 'name' }

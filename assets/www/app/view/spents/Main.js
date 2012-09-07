@@ -1,4 +1,4 @@
-Ext.define('GoodbyeMoney.view.spents.Main', {
+Ext.define('GM.view.spents.Main', {
     extend: 'Ext.Panel',
     xtype: 'spentsmain',
 

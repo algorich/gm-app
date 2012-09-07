@@ -1,4 +1,4 @@
-Ext.define('GoodbyeMoney.view.spents.New', {
+Ext.define('GM.view.spents.New', {
     extend: 'Ext.form.Panel',
     xtype: 'newspent',
     title: 'Spent',

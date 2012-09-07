@@ -1,4 +1,4 @@
-Ext.define('GoodbyeMoney.view.categories.List', {
+Ext.define('GM.view.categories.List', {
     extend: 'Ext.dataview.List',
     xtype: 'categorieslist',
 
