@@ -1,7 +1,7 @@
 # GoodbyeMoney
 
 The money that go away is the responsible for let our pockets empty. The amount
-of money that you earn is the same every month, but we spent it in several
+of money that we earn is the same every month, but we spent it in several
 different ways. So we have to find the leak and fix it, taking the control of
 where the spent money is going.
 
