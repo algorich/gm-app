@@ -74,7 +74,7 @@ Ext.define('GoodbyeMoney.controller.Spents', {
 
         if (errors.isValid()) {
             spent.save();
-            if (button.action === 'createSpent')
+            if (button.config.action === 'createSpent')
                 navigator.app.exitApp();
             else
                 form.reset();
