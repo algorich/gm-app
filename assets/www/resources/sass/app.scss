@@ -20,3 +20,8 @@
 
 @include pictos-iconmask('list');
 @include pictos-iconmask('tags');
+
+.x-list-header .total-amount {
+    float: right;
+    color: #B31717;
+}
