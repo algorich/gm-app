@@ -10,7 +10,8 @@ Ext.define('GM.view.Main', {
         items: [
             { xtype: 'newspent' },
             { xtype: 'spentsmain' },
-            { xtype: 'categoriesindex' }
+            { xtype: 'categoriesindex' },
+            { xtype: 'sync' }
         ]
     }
 });

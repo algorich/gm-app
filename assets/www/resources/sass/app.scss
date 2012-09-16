@@ -16,10 +16,13 @@
 @include sencha-form;
 @include sencha-msgbox;
 
+@include sencha-loading-spinner;
+
 // Your custom code goes here...
 
 @include pictos-iconmask('list');
 @include pictos-iconmask('tags');
+@include pictos-iconmask('sync');
 
 .x-list-header .total-amount {
     float: right;

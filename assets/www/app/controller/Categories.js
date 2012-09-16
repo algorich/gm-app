@@ -43,5 +43,5 @@ Ext.define('GM.controller.Categories', {
                 'Fix the following errors:' + errors_string
             )
         }
-    },
+    }
 });

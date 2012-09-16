@@ -2,10 +2,11 @@ Ext.application({
     name: 'GM',
 
     views: ['Main', 'spents.Main', 'spents.New', 'spents.Edit', 'spents.List',
-    'categories.Index', 'categories.Form', 'categories.List'],
-    controllers: ['Main', 'Spents', 'Categories'],
-    models: ['Spent', 'Category'],
-    stores: ['Spents', 'Categories'],
+    'categories.Index', 'categories.Form', 'categories.List', 'users.SignIn',
+    'users.SignUp', 'Sync'],
+    controllers: ['Main', 'Spents', 'Categories', 'Users'],
+    models: ['Spent', 'Category', 'User'],
+    stores: ['Spents', 'Categories', 'Users'],
 
     icon: {
         '57': 'resources/icons/Icon.png',
@@ -32,7 +33,7 @@ Ext.application({
         /* set the default date format */
         Ext.util.Format.defaultDateFormat = 'Y-m-d';
 
-        this.getController('Main').show();
+        GM.app.getController('Users').start();
     },
 
     onUpdated: function() {
