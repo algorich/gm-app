@@ -17,6 +17,7 @@ Ext.define('GM.store.Spents', {
         // Run the store.each loop for every record on the store sucks.
         //
         grouper: {
+            sortProperty: 'date',
             direction: 'DESC',
             groupFn: function(record) {
                 var mounthNames = ['January', 'February', 'March', 'April',
