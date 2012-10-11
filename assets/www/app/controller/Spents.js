@@ -125,5 +125,47 @@ Ext.define('GM.controller.Spents', {
                 };
             }
         );
+    },
+
+    sync: function() {
+        var user = Ext.getStore('Users').first();
+        var store = Ext.getStore('Spents');
+        var spents = [];
+
+        store.load();
+        store.each(function(record) {
+            spents.push({
+                id: record.data.id,
+                amount: record.data.amount,
+                date: record.data.date,
+                description: record.data.description,
+                category_id: record.data.category_id,
+            });
+        });
+
+        function onSuccess (result) {
+            console.log(result);
+        }
+
+        function onFailure (result) {
+            console.log(result);
+        }
+
+        if (navigator.network.connection.type != Connection.NONE) {
+            Ext.Ajax.request({
+                url: WEBSERVER_URL + '/spents/sync',
+                // jsonData: spents,
+                // headers: {'Content-Type': 'application/json'},
+                params: {
+                    token: user.data.token,
+                    api_token: API_TOKEN,
+                    spents: JSON.stringify(spents)
+                },
+                withCredentials: true,      /* necessary to cross domain requests */
+                useDefaultXhrHeader: false, /* necessary to cross domain requests */
+                success: onSuccess,
+                failure: onFailure
+            });
+        }
     }
 });
