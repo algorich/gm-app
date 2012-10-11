@@ -1,11 +1,29 @@
 Ext.application({
     name: 'GM',
 
-    views: ['Main', 'spents.Main', 'spents.New', 'spents.Edit', 'spents.List',
-    'categories.Index', 'categories.Form', 'categories.List'],
-    controllers: ['Main', 'Spents', 'Categories'],
-    models: ['Spent', 'Category'],
-    stores: ['Spents', 'Categories'],
+    views: [
+        'Main',
+        'spents.Main',
+        'spents.New',
+        'spents.Edit',
+        'spents.List',
+        'categories.Index',
+        'categories.Form',
+        'categories.List'
+    ],
+    controllers: [
+        'Main',
+        'Spents',
+        'Categories'
+    ],
+    models: [
+        'Spent',
+        'Category'
+    ],
+    stores: [
+        'Spents',
+        'Categories'
+    ],
 
     icon: {
         '57': 'resources/icons/Icon.png',
@@ -26,9 +44,6 @@ Ext.application({
     },
 
     launch: function() {
-        // Destroy the #appLoadingIndicator element
-        Ext.fly('appLoadingIndicator').destroy();
-
         /* set the default date format */
         Ext.util.Format.defaultDateFormat = 'Y-m-d';
 
