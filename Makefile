@@ -2,6 +2,8 @@ production: prepare-temp production-build mv-build-production install undo-mv-bu
 
 testing: prepare-temp testing-build mv-build-testing install undo-mv-build
 
+release: prepare-temp production-build mv-build-production signed-package undo-mv-build
+
 local-production: prepare-temp production-build mv-build-production
 
 local-testing: prepare-temp testing-build mv-build-testing
@@ -35,3 +37,9 @@ undo-mv-build:
 
 compile-css:
 	cd assets/www/resources/sass; compass compile app.scss
+
+signed-package:
+	ant release
+	jarsigner -verbose -sigalg MD5withRSA -digestalg SHA1 -keystore ../algorich-release-key.keystore bin/GoodbyeMoney-release-unsigned.apk algorich
+	rm -f bin/GoodbyeMoney.apk
+	zipalign -v 4 bin/GoodbyeMoney-release-unsigned.apk bin/GoodbyeMoney.apk
