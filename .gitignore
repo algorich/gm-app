@@ -4,7 +4,6 @@
 local.properties
 bin
 gen
-algorich-release-key.keystore
 
 # sencha files
 assets/www/build
